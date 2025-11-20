@@ -45,3 +45,10 @@ const employee1: Employee={
 };
 
 
+
+
+//Method 6: Interfaces in react
+
+
+
+
