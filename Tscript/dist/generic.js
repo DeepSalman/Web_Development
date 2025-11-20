@@ -33,4 +33,15 @@ const UserRes = {
 };
 const numBox = { item: 10 };
 const strBox = { item: "Hello" };
-//# sourceMappingURL=Generics.js.map
+///Generic Constrains :
+//You can force T to be only certain kinds of types
+//Example: T must be an object with a name property 
+function printName(object) {
+    console.log(object.name);
+}
+printName({ name: "salman", age: 20 });
+const p1 = {
+    first: "Salman",
+    second: 4,
+};
+//# sourceMappingURL=generic.js.map
