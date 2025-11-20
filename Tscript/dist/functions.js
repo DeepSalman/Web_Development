@@ -26,6 +26,14 @@ const s = (x, y) => x + y;
 // API functions use function types.
 // TanStack Query callbacks use function types.
 // Utility functions use them everywhere.
+console.log("Example 01: ");
+const greet = (n) => `Hello, ${n}`;
+console.log(greet("Salman!"));
+console.log("Example 02");
+const isGreater = (a, b) => a > b;
+console.log("Example 03");
+const idNumber = (x) => x;
+const idString = (x) => x;
 //Method 8:
 //A function that never returns (infinite loop, always throws):
 function fail(msg) {

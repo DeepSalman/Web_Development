@@ -33,6 +33,19 @@ const s: sum=(x,y)=>x+y;
 // API functions use function types.
 // TanStack Query callbacks use function types.
 // Utility functions use them everywhere.
+console.log("Example 01: ");
+type Greet = (name: string) => string;
+const greet: Greet = (n) => `Hello, ${n}`; 
+console.log(greet("Salman!"));
+
+console.log("Example 02");
+type Compare = (x:number,y:number)=>boolean;
+const isGreater:Compare=(a,b)=>a>b;
+
+console.log("Example 03");
+type Identity<T> = (value: T) => T;
+const idNumber: Identity<number> = (x) => x;
+const idString: Identity<string> = (x) => x;
 
 
 
