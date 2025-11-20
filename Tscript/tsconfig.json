@@ -10,7 +10,7 @@
     "module": "nodenext",
     "target": "esnext",
     "types": [],
-    "jsx": "react-jsx",
+    
 
 
     // For nodejs:
