@@ -1,0 +1,14 @@
+There are 2 types of modules: 
+1.Local module = that we make by ourselves 
+2.Built in module = (nodejs owns these modules) = http,url,path,fs
+3.External Modules = managed by npm and needed to be installed 
+
+
+
+Topic 2 : Fs module 
+-writeFile()
+-appendFile()
+-readFile()
+-rename()
+-unlink()
+-exists()
