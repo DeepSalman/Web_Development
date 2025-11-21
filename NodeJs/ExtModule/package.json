@@ -4,11 +4,14 @@
   "description": "",
   "main": "learn.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon htmlrouting.js"
+    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nodemon": "^3.1.11",
     "random-fruits-name": "^1.10.1"
   }
 }
