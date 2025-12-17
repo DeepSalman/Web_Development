@@ -21,4 +21,14 @@ async def view():
     data = load_data()
     return data
 
+@app.get("/Patient/{patient_id}")
+async def patient(patient_id: str):
+    data = load_data()
+    for patient in data:
+        if patient["id"] == patient_id:
+            return patient
+    return {"message": "Patient not found"}
+    
+
+
 
