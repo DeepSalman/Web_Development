@@ -40,4 +40,8 @@ def sort_patients(sort_by: str=Query(..., description="Sort on the basis of Heig
     
     data = load_data()
     
-    
+    sort_order = True if order == 'desc' else False
+
+    sorted_data = dict(sorted(data.items(), key=lambda item: item[1][sort_by], reverse=sort_order))
+
+    return sorted_data
