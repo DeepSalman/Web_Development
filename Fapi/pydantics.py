@@ -13,13 +13,16 @@ class Patient(BaseModel):
 
 def insert_patient(patient: Patient):
     print(patient.name)
+    print(patient.email)
     print(patient.age)
     print(patient.height)
     print(patient.weight)
     print(patient.bmi)
+    print(patient.allergies)
+    print(patient.contact_details)
     print("Inserted")
 
-Patient_info ={'name':'nitesh','age':25,'height':5.9,'weight':70,'bmi':22.5,'allergies':['pollen','dust'],'contact_details':{'phone':'1234567890'}}
+Patient_info ={'name':'nitesh','email':'nitesh@gmail.com','age':25,'height':5.9,'weight':70,'bmi':22.5,'allergies':['pollen','dust'],'contact_details':{'phone':'1234567890'}}
 
 patient1 = Patient(**Patient_info)
 
