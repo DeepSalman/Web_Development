@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Path, HTTPException,Query
 import json
+from pydantic import BaseModel
 
 def load_data():
     with open("patients.json","r") as f:
