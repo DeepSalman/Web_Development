@@ -1,12 +1,46 @@
 from fastapi import FastAPI, Path, HTTPException,Query
 import json
-from pydantic import BaseModel
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel,Field,computed_field
+from typing import Annotated,Literal
+
+class Patient(BaseModel):
+    id:  Annotated[str, Field(...,description="Unique identifier for the patient")]
+    name: Annotated[str,Field(...,description="Full name of the patient")]
+    city: Annotated[str,Field(...,description="City of residence")]
+    age: Annotated[int,Field(...,gt=0,lt=100,description="Age of the patient")]
+    gender: Annotated[Literal['male','female','others'],Field(...,description="Gender of the patient")]
+    height: Annotated[float,Field(...,gt=0,description="Height of the patient in meters")]
+    weight: Annotated[float,Field(...,gt=0,description="Weight of the patient in kg")]
+    @computed_field
+    @property
+    def bmi(self) -> float:
+        bmi=self.weight/(self.height**2)
+        return round(bmi,2)
+    @computed_field
+    @property
+    def verdict(self) -> str:
+        if self.bmi < 18.5:
+            return "Underweight"
+        elif 18.5 <= self.bmi < 24.9:
+            return "Normal weight"
+        elif 25 <= self.bmi < 29.9:
+            return "Overweight"
+        else:
+            return "Obesity"
+
+
+
 
 def load_data():
     with open("patients.json","r") as f:
         data = json.load(f)
 
         return data
+    
+def save_data(data):
+    with open("patients.json","w") as f:
+        json.dump(data,f)
 
 
 app = FastAPI()
@@ -46,3 +80,24 @@ def sort_patients(sort_by: str=Query(..., description="Sort on the basis of Heig
     sorted_data = dict(sorted(data.items(), key=lambda item: item[1][sort_by], reverse=sort_order))
 
     return sorted_data
+
+
+
+@app.post('/create')
+def create_patient(patient: Patient):
+    #load existing data
+    data = load_data()
+
+    #Check if the patient id already exists
+    if patient.id in data:
+        raise HTTPException(status_code=400, detail="Patient with this id already exists : ")
+    
+    #new patient add to the database
+    data[patient.id]=patient.model_dump(exclude=['id']) # converts a pydantic model to a dictionary
+
+    #save the updated data back to the json file ( not this is as python dictionary form )
+    save_data(data)
+
+    return JSONResponse(content={"message": "Patient created successfully"}, status_code=201)
+
+
