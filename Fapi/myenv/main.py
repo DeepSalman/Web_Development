@@ -2,7 +2,7 @@ from fastapi import FastAPI, Path, HTTPException,Query
 import json
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel,Field,computed_field
-from typing import Annotated,Literal
+from typing import Annotated,Literal,Optional
 
 class Patient(BaseModel):
     id:  Annotated[str, Field(...,description="Unique identifier for the patient")]
@@ -28,6 +28,16 @@ class Patient(BaseModel):
             return "Overweight"
         else:
             return "Obesity"
+
+
+class PatientUpdate(BaseModel):
+    
+    name: Annotated[str,Field(Optional,description="Full name of the patient")]
+    city: Annotated[str,Field(Optional,description="City of residence")]
+    age: Annotated[int,Field(Optional,gt=0,lt=100,description="Age of the patient")]
+    gender: Annotated[Literal['male','female','others'],Field(Optional,description="Gender of the patient")]
+    height: Annotated[float,Field(Optional,gt=0,description="Height of the patient in meters")]
+    weight: Annotated[float,Field(Optional,gt=0,description="Weight of the patient in kg")]
 
 
 
