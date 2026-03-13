@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Grid vs Flexbox — 3 Cards Each</title>
+  <style>
+    /* make sizing predictable for flex/grid calculations */
+    *,*::before,*::after{box-sizing:border-box}
+    :root{--bg:#f5f7fb;--card:#ffffff;--accent:#0066cc;--muted:#666}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;line-height:1.5;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:960px;margin:2rem auto;padding:1rem}
+    h1,h2{margin:0 0 .75rem}
+    section{background:transparent;margin-bottom:2rem}
+    .demo{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+
+    /* Grid demo */
+    .grid-demo .grid-container{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media (max-width:700px){
+      .grid-demo .grid-container{grid-template-columns:repeat(1,1fr)}
+    }
+
+    /* Flex demo */
+    .flex-demo .flex-container{display:flex;gap:1rem;flex-wrap:wrap;align-items:stretch}
+    /* Use a flex-basis that accounts for gap width (2 gaps of 1rem for 3 items) */
+    .flex-demo .flex-container .card{flex:1 1 calc((100% - 2rem)/3);min-width:0}
+    @media (max-width:700px){
+      .flex-demo .flex-container .card{flex:1 1 100%}
+    }
+
+    /* Card common styles */
+    .card{background:#fff;padding:1rem;border-radius:8px;border:1px solid #eee;display:flex;flex-direction:column;gap:.5rem}
+    .card h3{margin:.25rem 0}
+    .card p{margin:0;color:var(--muted)}
+    .card .actions{margin-top:auto;display:flex;gap:.5rem}
+    .btn{background:var(--accent);color:#fff;border:none;padding:.4rem .6rem;border-radius:6px;cursor:pointer}
+    .btn.secondary{background:#eee;color:#111}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Grid vs Flexbox — 3 Cards Each</h1>
+      <p style="color:var(--muted);margin:.25rem 0 1rem">Use this page to practice CSS and inspect how Grid and Flexbox behave for card layouts.</p>
+    </header>
+
+    <section class="grid-demo demo">
+      <h2>Grid: 3 Columns</h2>
+      <p style="color:var(--muted);margin:.25rem 0 .75rem">The container uses CSS Grid with three equal columns (responsive to one column on narrow screens).</p>
+      <div class="grid-container">
+        <article class="card">
+          <h3>Grid Card 1</h3>
+          <p>Content for the first grid card. Try changing padding, gap, and grid-template-columns.</p>
+          <div class="actions">
+            <button class="btn">Primary</button>
+            <button class="btn secondary">Secondary</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Grid Card 2</h3>
+          <p>Second card content. Grid ensures consistent column widths and alignment.</p>
+          <div class="actions"><button class="btn">Primary</button></div>
+        </article>
+
+        <article class="card">
+          <h3>Grid Card 3</h3>
+          <p>Third card. Resize the window to see grid collapse at smaller widths.</p>
+          <div class="actions"><button class="btn secondary">Learn</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="flex-demo demo">
+      <h2>Flexbox: Row of Cards</h2>
+      <p style="color:var(--muted);margin:.25rem 0 .75rem">The container uses Flexbox; cards grow and wrap. Try changing <code>flex</code> properties.</p>
+      <div class="flex-container">
+        <article class="card">
+          <h3>Flex Card A</h3>
+          <p>Flex item with flexible width. Try increasing content to see how it affects height.</p>
+          <div class="actions"><button class="btn">Action</button></div>
+        </article>
+
+        <article class="card">
+          <h3>Flex Card B</h3>
+          <p>Another flex item. By default it shares available space with siblings.</p>
+          <div class="actions"><button class="btn">Action</button></div>
+        </article>
+
+        <article class="card">
+          <h3>Flex Card C</h3>
+          <p>Third flex item. Use developer tools to toggle <code>flex-direction</code> or <code>align-items</code>.</p>
+          <div class="actions"><button class="btn secondary">More</button></div>
+        </article>
+      </div>
+    </section>
+
+    <footer style="color:var(--muted);font-size:.95rem">Tip: Try inspecting each container and modify CSS rules in the browser to practice.</footer>
+  </div>
+</body>
+</html>

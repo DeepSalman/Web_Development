@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HTML practice file with many tags for CSS and JS exercises">
+	<base href="./">
+	<title>HTML Practice — All Tags Sample</title>
+	<link rel="stylesheet" href="styles.css" id="theme-link">
+	<style>
+		/* Minimal styling for clarity */
+		:root{--blue:#40aaf0;--muted:#666}
+		body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;padding:1rem;color:#111}
+		header,footer{background:#f7f7f7;padding:1rem;margin-bottom:5rem}
+		nav a{margin-right:.75rem;color:var(--blue)}
+		.grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+		aside{background:#fff;border:1px solid #eee;padding:1rem}
+		pre{background:#0b0b0b;color:#e6e6e6;padding:1rem;overflow:auto}
+		.controls{display:flex;gap:.5rem;align-items:center}
+		.hidden{display:none}
+	</style>
+	<script>
+		// Small helper JS to demonstrate DOM/CSS interactions
+		function toggleTheme(){
+			const link = document.getElementById('theme-link');
+			if(link.getAttribute('data-dark') === 'true'){
+				link.href = 'styles.css';
+				link.setAttribute('data-dark','false');
+			} else {
+				link.href = 'styles-dark.css';
+				link.setAttribute('data-dark','true');
+			}
+		}
+		function showFormValues(e){
+			e.preventDefault();
+			const out = document.getElementById('form-output');
+			const fd = new FormData(e.target);
+			const entries = Array.from(fd.entries()).map(([k,v])=>`${k}: ${v}`).join('\n');
+			out.textContent = entries || 'No values';
+		}
+		document.addEventListener('DOMContentLoaded',()=>{
+			document.getElementById('demo-form').addEventListener('submit', showFormValues);
+			document.getElementById('toggle-theme').addEventListener('click', toggleTheme);
+			// small interactive example
+			const markBtn = document.getElementById('mark-selected');
+			markBtn.addEventListener('click', ()=>{
+				const sel = window.getSelection().toString();
+				if(!sel) return alert('Select text to mark');
+				const el = document.getElementById('marked');
+				el.textContent = sel;
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1 align="center">HTML Practice Playground by Salman</h1>
+		<p class="muted" align="center">A single file containing many common HTML elements to practice CSS and JS.</p>
+		<nav aria-label="Primary navigation" align="center">
+			<a href="#semantics">Semantics</a>
+			<a href="#forms">Forms</a>
+			<a href="#media">Media</a>
+			<a href="#interactive">Interactive</a>
+		</nav>
+	</header>
+
+	<main class="grid">
+		<section>
+			<article id="semantics">
+				<header>
+					<h2>Semantic Elements</h2>
+					<p>Use these to structure content: <code>header, nav, main, section, article, aside, footer</code>.</p>
+				</header>
+
+				<section>
+					<h3>Headings & Flow</h3>
+					<h1>Heading level 1</h1>
+					<h2>Heading level 2</h2>
+					<h3>Heading level 3</h3>
+					<h4>Heading level 4</h4>
+					<h5>Heading level 5</h5>
+					<h6>Heading level 6</h6>
+					<p>Paragraph with a <a href="#" title="Example link">link</a>, <strong>strong text</strong>, <em>emphasized</em>, <small>small text</small>, and <mark>marked text</mark>.</p>
+					<p>Inline code: <code>document.querySelector()</code> and keyboard key: <kbd>Ctrl</kbd> + <kbd>C</kbd>.</p>
+				</section>
+
+				<section>
+					<h3>Lists</h3>
+					<ul>
+						<li>Unordered list item</li>
+						<li>With nested list
+							<ol>
+								<li>Ordered item 1</li>
+								<li>Ordered item 2</li>
+							</ol>
+						</li>
+						<li>Another item</li>
+					</ul>
+					<dl>
+						<dt>HTML</dt>
+						<dd>HyperText Markup Language</dd>
+						<dt>CSS</dt>
+						<dd>Cascading Style Sheets</dd>
+					</dl>
+				</section>
+
+				<section>
+					<h3>Table</h3>
+					<table border="1">
+						<caption>Sample table</caption>
+						<thead>
+							<tr><th>Item</th><th>Qty</th><th>Price</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Pen</td><td>2</td><td>$1.50</td></tr>
+							<tr><td>Notebook</td><td>1</td><td>$3.00</td></tr>
+						</tbody>
+						<tfoot>
+							<tr><td colspan="2">Total</td><td>$6.00</td></tr>
+						</tfoot>
+					</table>
+				</section>
+
+				<section>
+					<h3>Blockquote & Code</h3>
+					<blockquote cite="https://developer.mozilla.org/">
+						<p>“The Web is a platform for everyone.”</p>
+					</blockquote>
+					<pre><code>// sample preformatted code
+function hello(name){
+	return `Hello ${name}`;
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h3>Useful Inline Elements</h3>
+					<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr> — time example: <time datetime="2026-03-13">March 13, 2026</time></p>
+					<p>Address example:</p>
+					<address>
+						Example Corp<br>
+						123 Example Lane<br>
+						City, Country
+					</address>
+				</section>
+			</article>
+
+			<article id="forms">
+				<header><h2>Form Elements</h2></header>
+				<form id="demo-form">
+					<fieldset>
+						<legend>Contact</legend>
+						<label for="name">Name</label>
+						<input id="name" name="name" type="text" placeholder="Your name">
+
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" required>
+
+						<label for="age">Age</label>
+						<input id="age" name="age" type="number" min="0" max="120">
+
+						<label>Choose</label>
+						<div>
+							<label><input type="radio" name="choice" value="a"> A</label>
+							<label><input type="radio" name="choice" value="b"> B</label>
+						</div>
+
+						<label><input type="checkbox" name="subscribe" value="yes"> Subscribe</label>
+
+						<label for="range">Satisfaction</label>
+						<input id="range" name="range" type="range" min="0" max="10">
+
+						<label for="color">Favorite color</label>
+						<input type="color" id="color" name="color" value="#007acc">
+
+						<label for="bio">Bio</label>
+						<textarea id="bio" name="bio" rows="3"></textarea>
+
+						<label for="country">Country</label>
+						<select id="country" name="country">
+							<option value="">Choose...</option>
+							<option>USA</option>
+							<option>Canada</option>
+							<option>Other</option>
+						</select>
+
+						<label for="autocomplete">Browser</label>
+						<input list="browsers" id="autocomplete" name="browser">
+						<datalist id="browsers">
+							<option value="Chrome">
+							<option value="Firefox">
+							<option value="Safari">
+						</datalist>
+
+						<div class="controls">
+							<button type="submit">Submit</button>
+							<button type="reset">Reset</button>
+						</div>
+					</fieldset>
+				</form>
+				<pre id="form-output" aria-live="polite"></pre>
+			</article>
+
+			<article id="media">
+				<header><h2>Media & Graphics</h2></header>
+				<figure>
+					<picture>
+						<source media="(min-width:600px)" srcset="https://via.placeholder.com/600x200.png">
+						<img src="https://via.placeholder.com/300x100.png" alt="placeholder image">
+					</picture>
+					<figcaption>Responsive image using <code>picture</code>.</figcaption>
+				</figure>
+
+				<video controls width="320">
+					<source src="video-sample.mp4" type="video/mp4">
+					Your browser does not support HTML5 video.
+				</video>
+
+				<audio controls>
+					<source src="audio-sample.mp3" type="audio/mpeg">
+					Your browser does not support audio.
+				</audio>
+
+				<canvas id="demo-canvas" width="300" height="80" style="border:1px solid #ccc"></canvas>
+				<script>
+					// draw to canvas
+					const c = document.getElementById('demo-canvas');
+					if(c && c.getContext){
+						const ctx = c.getContext('2d');
+						ctx.fillStyle = 'lightblue';
+						ctx.fillRect(0,0,c.width,c.height);
+						ctx.fillStyle = '#003';
+						ctx.font = '20px sans-serif';
+						ctx.fillText('Canvas demo',10,50);
+					}
+				</script>
+			</article>
+
+			<article id="interactive">
+				<header><h2>Interactive Elements</h2></header>
+				<details>
+					<summary>Click to expand details</summary>
+					<p>This is a <code>details</code> element containing more content.</p>
+				</details>
+
+				<dialog id="sample-dialog">
+					<p>This is a dialog. Try opening it from the console: <code>document.getElementById('sample-dialog').showModal()</code></p>
+				</dialog>
+
+				<p>Text selection example: select some text below then click the button to capture it.</p>
+				<p id="selection-target">Select any part of this sentence and click the button.</p>
+				<button id="mark-selected">Capture selection</button>
+				<p>Captured: <strong id="marked"></strong></p>
+			</article>
+		</section>
+
+		<aside>
+			<h3>Quick Reference</h3>
+			<p>Try modifying classes, IDs, or styles and use the console to interact with elements.</p>
+			<p><strong>Shortcuts</strong></p>
+			<ul>
+				<li>Toggle theme: <button id="toggle-theme">Toggle Theme</button></li>
+				<li>Open dialog: <button onclick="document.getElementById('sample-dialog').showModal()">Open Dialog</button></li>
+			</ul>
+
+			<h4>Form cheatsheet</h4>
+			<pre>
+document.querySelector('#demo-form')
+.addEventListener('submit', e => {/* handle */})
+</pre>
+
+			<h4>ARIA & Data</h4>
+			<p>Buttons and inputs include labels, and elements may carry <code>data-*</code> attributes for JS hooks.</p>
+		</aside>
+	</main>
+
+	<footer>
+		<p>Practice file — experiment with CSS selectors, transitions, and JS DOM APIs.</p>
+		<p>File: <a href="Details/practice.html">Details/practice.html</a></p>
+	</footer>
+</body>
+</html>
