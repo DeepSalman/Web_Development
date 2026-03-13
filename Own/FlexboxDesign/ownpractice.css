@@ -1,0 +1,41 @@
+body{
+    min-height: 800px;
+    border: 5px solid black;
+    display: flex;
+    justify-content:center;
+    flex-direction: row;  /*How items will be organized*/
+    align-items: center;
+    gap: 1px;
+    flex-wrap:wrap;
+
+}
+.box{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    font-size: 20pt;
+    flex-grow:0;
+    flex-shrink:1;
+}
+#idbox{
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    font-size: 20pt;
+    padding-right:5px;
+    flex-grow:0;
+    flex-shrink:1;
+    
+}
+
+@media(max-width: 500px){
+    body{
+        flex-wrap:wrap;
+    }
+}
