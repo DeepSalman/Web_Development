@@ -1,0 +1,33 @@
+body{
+    min-height: 800px;
+    border: 2px solid black;
+    border-style: dashed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.box{
+    height:100px;
+    width:100px;
+    background-color: rgb(116, 211, 211);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*@media(media type :condition){
+selector{
+    property:value
+}
+}
+*/
+
+@media(max-width: 500px){
+    body{
+        flex-wrap: wrap;
+    }
+}
