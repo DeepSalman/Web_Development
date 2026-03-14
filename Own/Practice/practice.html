@@ -5,41 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="practice.css">
+    <style>
+        body{
+            min-height: 800px;
+            border: 1px;
+            border-color: black;
+            border-style: dotted;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #containerdiv{
+            
+            height: 100px;
+            background: burlywood;
+            display:flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+
+        }
+        #sp1{
+            background:chocolate;
+        }
+        #sp2{
+            background:chocolate;
+        }
+        #sp3{
+            background:chocolate;
+        }
+        #sp4{
+            background:chocolate;
+        }
+        #dv1{
+            background:rgb(150, 112, 86);
+        }
+    </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <div class="form-card">
-        <h2>Form</h2>
-        <form id="contactForm" method="post" action="#">
-        <lable for="name">Full Name</lable>
-        <input id="name" type="text" name="name" required placeholder="e.g.Salman">
-
-        <lable for="email">Email</lable>
-        <input id="email" type="email" name="email" required placeholder="">
-
-        <lable for="age">Age</lable>
-        <input id="age" type="number" name="age" required placeholder="18">
-
-        <lable for="gender" required>Gender</lable>
-        <select id="gender" name="gender">
-            <option value="" disabled selected hidden>Select gender</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="other">Other</option>
-        </select>
-
-        <lable for="message">Message</lable>
-        <textarea id="message" name="message" rows="5" ></textarea>
-        <label for="outputtext">Output</label>
-        <textarea id="outputtext" name="outputtext" rows="5"></textarea>
-
-        <button type="submit">Submit</button>
-
-        
-    </form>
+    <div id="containerdiv">
+        <span id="sp1">Span 1</span>
+        <span id="sp2">Span 2</span>
+        <div id="dv1">Div 1</div>
+        <span id="sp3">Span 3</span>
+        <span id="sp4">Span 4</span>
     </div>
-    </div>
-    <script src="practice.js"></script>
 </body>
 </html>
