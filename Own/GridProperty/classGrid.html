@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            background-color: rgb(255, 255, 255);
+            
+            display:grid;
+            width:800px;
+            height:150px;
+
+            grid-template-rows: 200px 200px 200px;
+            grid-template-columns: 200px 200px 200px;
+
+            gap: 1px;
+
+            justify-content: center;
+            align-items: center;
+            border: 1px;
+            
+
+            
+
+
+        }
+        #items{
+            background-color: brown;
+            height:100px;
+            width:100px;
+            border: 1px;
+            border-color: black;
+            border-style: dashed;
+        }
+        span{
+            border:solid 1px rgb(250, 250, 250);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <span id="items">Span 1</span>
+        <span id="items">Span 2</span>
+        <span id="items">Span 3</span>
+        <span id="items">Span 4</span>
+        <span id="items">Span 5</span>
+        <span id="items">Span 6</span>
+        <span id="items">Span 4</span>
+        <span id="items">Span 5</span>
+        <span id="items">Span 6</span>
+
+    </div>
+</body>
+</html>
