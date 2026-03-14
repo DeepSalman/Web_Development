@@ -10,9 +10,25 @@
 		<div class="page-wrapper">
 			<div class="form-card">
 				<h1>Contact Form</h1>
+
+                <!--
+                For=Links lable to the input
+                type=what kind of input it is
+                id=
+                name= This is the most important attribute for the server. 
+                When the form is submitted, the data is sent as a 
+                pair: name=YourEnteredValue. Without a name attribute, 
+                the server won't receive the data from this box.
+                
+                required= A built in validation
+
+                PlaceHolder= hint inside the box
+                
+                
+                -->
 				<form id="contactForm" method="post" action="#">
 					<label for="name">Full name</label>
-					<input type="text" id="name" name="name" required>
+					<input type="text" id="name" name="name" required placeholder="Your Name">
 
 					<label for="email">Email</label>
 					<input type="email" id="email" name="email" required>
