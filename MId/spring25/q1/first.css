@@ -18,9 +18,37 @@ a{
     align-items: center;
     gap:20px;
 }
+#firstdivfontelement{
+    font-size: small;
+}
 #signupbutton{
     padding: 5px 10px;
     background-color: #ff4419;
     border: none;
     color:white;
+}
+
+.seconddiv{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 10px;
+
+}
+
+#seconddifontelement{
+    font-size: small;
+}
+.thirddiv{
+    background-color: rgb(216, 236, 236);
+    height: 400px;
+    
+}
+.thirddivpartone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
 }
