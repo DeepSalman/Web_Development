@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    /* text-decoration: none; to remove underline */
+    text-decoration: none;
+    color: black;
+}
+.topdiv{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+.topdivright{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+#signupbutton{
+    padding: 5px 10px;
+    background-color: #ff4419;
+    border: none;
+    color:white;
+}
