@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #mainDiv{
+                background-color: antiquewhite;
+                width: 920px;
+                height: 550px;
+                margin: auto;
+            }
+
+            nav{
+                background-color: rgb(200, 191, 191);
+                display: flex;
+                color: blue;
+                font-weight: bold;                
+            }
+
+            footer{
+                text-align: center;
+                background-image: linear-gradient(to right, orange,green,silver);
+                width: 100%;
+                height: 35px;
+                color: white;
+                padding-top: 7px;
+                box-sizing: border-box;
+            }
+
+            #contentDiv{
+                height: 500px;
+                display: flex;
+            }
+
+            #thinColumn{
+                background-color: aqua;
+                width: 32%;
+                height: 100%;
+                background-image: linear-gradient(to bottom, aqua,rgb(139, 160, 167));
+            }
+            #fatColumn{
+                background-color: rgb(227, 222, 222);
+                width: 68%;
+                height: 100%;
+            }
+            #semesterHeaderDiv{
+                font-size: 25px;
+                margin-left: 7px;
+                color: rgb(91, 90, 90);
+                font-weight: bold;
+                margin-bottom: 7px;
+            }
+
+            .semesterNamesClass{
+                background-color: rgba(240, 248, 255, 0.788);
+                margin-bottom: 7px;
+                height: 35px;
+                width: 95%;
+                margin-left: 7px;
+                border-radius: 10px;
+                padding-top:7px;
+                box-sizing: border-box;
+                padding-left: 7px;
+            }
+
+            #cardDiv{
+                width: 95%;
+                height: 26.5%;
+                background-color: aliceblue;
+                margin-left: 7px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                padding-left: 7px;
+            }
+
+            .headerStyle{
+               color: rgb(74, 74, 168); 
+               font-size: 20px;
+               margin-bottom: 7px;
+               margin-left: 5px; 
+               padding-top: 7px;
+               font-family: Calibri;
+               font-weight: bold;
+            
+            }
+
+            .buttonProp{
+                background-image: linear-gradient(to right, blue,gold);
+                color: white;
+                border: 0px solid white;
+                border-radius: 5px;
+                width: 100px;
+                height: 25px;
+                margin-top: 5px;
+                margin-left: 5px;
+                font-size: 10px;
+            }
+
+            #tableDiv{
+                width: 100%;
+                height: 120px;
+                background-color: white;
+                margin-bottom:27px ;
+                border-radius: 10px;
+            }
+            #formDiv{
+                width: 100%;
+                height: 325px;
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            table{
+                border-collapse: collapse;
+                width: 97%;
+                margin-left: 8px;
+            }
+
+            th{
+                background-image: linear-gradient(to right,rgb(255, 102, 0),silver);
+                border: solid 1px gray;
+                color: white;
+                text-align: left;
+                font-family: Calibri;
+            }   
+            td{
+                background-image: linear-gradient(to right,rgb(255, 102, 0),silver);
+                border: solid 1px gray;
+                font-family: Calibri;
+            }
+            .fieldName{
+                font-family: Calibri;
+                font-weight: bold;
+                margin-left: 5px;
+                margin-bottom: 5px;
+            }
+            .inputClass{
+                width: 97%;
+                margin-left: 5px;
+                height: 25px;
+                border: 1px gray solid;
+                border-radius: 5px;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            #registerButton{
+                margin-top: 18px;
+                width: 70px;
+            }
+            #midTextDiv{
+                font-size: 13px;
+                margin-left:6px;
+                margin-bottom:7px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mainDiv">
+            <nav>
+                <div style="margin-right: 50%;">
+                    <span style="margin-right:5px">Dashboard</span>
+                    <span style="margin-right:5px">Courses</span>
+                    <span style="margin-right:5px">Notices</span>
+                    <span style="margin-right:5px">Results</span>
+                </div>
+
+                <div style="padding-left: 75px;">
+                    <span style="margin-right:5px">Login</span>
+                    <span>Sign Up</span>
+                </div>
+            </nav>
+
+            <div id="contentDiv">
+                <div id="thinColumn">
+                    <div id="semesterHeaderDiv">
+                        Semesters
+                    </div>
+
+                    <div id ="semNameDivs">
+                        <div class="semesterNamesClass">Fall 2024</div>
+                        <div class="semesterNamesClass">Summer 2024</div>
+                        <div class="semesterNamesClass">Spring 2024</div>
+                    </div>
+
+                    <div id="cardDiv">
+                        <div class="headerStyle">Important Notice</div>
+                        <div id="midTextDiv">Mid term exams will begin on April 10, 2025. Students must bring their ID cards and check the schedule posted on the portal</div>
+                        <button class="buttonProp">View Details</button>
+                    </div>
+
+                </div>
+                
+                <div id="fatColumn">
+                    <div id="tableDiv">
+                        <div class="headerStyle">Course Registration</div>
+
+                        <table border="1">
+                            <tr>
+                                <th>Course</th>
+                                <th>Code</th>
+                                <th>Credit</th>
+                            </tr>
+                            <tr>
+                                <td>Web Programming</td>
+                                <td>CSE 201</td>
+                                <td>3.0</td>
+                            </tr>
+                            <tr>
+                                <td>Data Structures</td>
+                                <td>CSE 202</td>
+                                <td>3.0</td>
+                            </tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div id="formDiv">
+                        <div class="headerStyle">Sign Up Form</div>
+                        <div class="fieldName">Full Name</div>
+                        <input class="inputClass" placeholder="Enter full name" type="text">
+                        <div class="fieldName">Student ID</div>
+                        <input class="inputClass" placeholder="e.g 011233001" type="text">
+                        <div class="fieldName">UIU Email</div>
+                        <input class="inputClass" placeholder="name@students.uiu.ac.bd" type="text">
+                        <div class="fieldName">Password</div>
+                        <input class="inputClass" placeholder="Enter password" type="password">
+                        <br>
+                        <button class="buttonProp" id="registerButton">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                &copy; 2025 United International University | Mid Term Exam
+            </footer>
+
+        </div>
+    </body>
+</html>

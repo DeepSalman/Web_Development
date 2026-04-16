@@ -45,12 +45,13 @@
 
 }
 #secondrightdiv{
-    background-color: rgb(159, 157, 160);
-    display: flex;
-    flex-direction: column;
+    background-color: rgb(255, 255, 255);
     width: 60%;
     height: 830px;
-    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    
+
 }
 
