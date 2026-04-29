@@ -18,7 +18,7 @@
             z-index: 1000; /* Keeps it above other content */
         }
 
-        .headdernav{
+        .headdernavtop{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -47,7 +47,25 @@
             cursor:pointer;
 
         }
-        @media screen and (max-width:310px){
+        .headdernavbottom{
+            background-color: black;
+            padding-bottom: 5px;
+        }
+        nav{
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+
+            
+
+        }
+        nav a{
+            color: white;
+        }
+        
+        @media screen and (max-width:500px){
             .headdernav{
             flex-direction: column;
             justify-content: center;
@@ -56,17 +74,38 @@
             }
         }
         
+        @media screen and (max-width:250px) {
+            .headdernavbottom{
+                display: none;
+            }
+        }
+        @media screen and (max-width:200px) {
+            .headderbutton{
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="headdernav">
+        <div class="headdernavtop">
             <div class="headdername"><a>Salman.Dev</a></div>
             <div class="headderbutton"><button class="headderbutton1">Get in Touch</button></div>
+            
         </div>
+        <div class="headdernavbottom">
+            <nav>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Works</a>
+                <a href="">Contact</a>
+            </nav>
+        </div>
+        
     </header>
     <main>
-        <img src="Own\Responsiveness\photo3.jpg">
+        
+        <img src="Own\Responsiveness\photo3.jpg" style="height: 100%;width: 100%;">
     </main>
 </body>
 </html>
