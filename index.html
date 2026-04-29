@@ -66,7 +66,7 @@
         }
         
         @media screen and (max-width:500px){
-            .headdernav{
+            .headdernavtop{
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -84,6 +84,34 @@
                 display: none;
             }
         }
+        /* Styles when the user HAS NOT scrolled */
+        header {
+            transition: all 0.5s ease; /* Makes changes smooth */
+        }
+
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        header.scrolled .headdername {
+            color:rgb(159, 253, 155); 
+            
+        }
+        header.scrolled .headdernavtop{
+            display: flex;
+            justify-content: center;
+        }
+
+        header.scrolled .headdernavbottom {
+            display: none; 
+        }
+
+        header.scrolled .headderbutton {
+            display: none; /* Hide the bottom nav links on scroll */
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -105,7 +133,39 @@
     </header>
     <main>
         
+        
         <img src="Own\Responsiveness\photo3.jpg" style="height: 100%;width: 100%;">
+        <img src="Own\Responsiveness\photo3.jpg" style="height: 100%;width: 100%;">
+
+        <div>
+            <h1>Hello</h1>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
+    
 </body>
+
+<footer>
+
+</footer>
+
+<script>
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector("header");
+        // Add the 'scrolled' class if the user scrolls more than 100px
+        header.classList.toggle("scrolled", window.scrollY > 300);
+    });
+</script>
 </html>

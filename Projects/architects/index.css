@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.roboto-navbar{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* Shared Styles */
+.header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+/* header styles */
+
+/* Navbar related styles */
+.navbarlinks{
+    display: flex;
+}
+.nav-items{
+    list-style: none;
+    margin-right: 30px;
+    direction: none;
+}
+.nav-link{
+    text-decoration: none;
+    font-weight: 500;
+}
