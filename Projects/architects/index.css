@@ -166,3 +166,15 @@ main{
     width: 100px;
     filter: grayscale(100%);
 }
+
+.footer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(255,144,14,0.1);
+    color: grey;
+    opacity: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
