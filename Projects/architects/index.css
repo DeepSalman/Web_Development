@@ -6,6 +6,7 @@
 html,body{
     
     margin: 0px;
+    
 }
 .roboto-navbar{
   font-family: "Roboto", sans-serif;
@@ -110,4 +111,58 @@ main{
 }
 .our-features{
     margin-left: 130px;
+}
+.facts-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+.fact{
+    border:1px solid orange;
+    border-radius: 8px;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text-light-gray{
+    margin-left: 10px;
+    opacity: 50%;
+    box-sizing: border-box;
+    text-align: left;
+}
+.section-title{
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+.sponsor-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sponsor-paragraph{
+    padding: 20px;
+    text-align: center;
+    opacity: 50%;
+    color: gray;
+    
+}
+.sponsors-logo{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+}
+
+.sponsor-logo-inner{
+    width: 100px;
+    filter: grayscale(100%);
 }
