@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+
+html,body{
+    
+    margin: 0px;
+}
 .roboto-navbar{
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -13,6 +20,8 @@
 .header{
     display: flex;
     justify-content: space-between;
+    background-color: rgb(255,144,14,0.1);
+    
     
 }
 
@@ -31,4 +40,50 @@
 .nav-link{
     text-decoration: none;
     font-weight: 500;
+    color: black;
+}
+.mainlogo{
+    margin-left: 40px;
+}
+.navdiv{
+    margin-right: 40px;
+}
+
+.midelements{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:50px;
+    background-color: rgb(255,144,14,0.1);
+}
+.midelements img{
+    margin-top: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.midelements>.roboto-navbar{
+    font-size: 3vh;
+    font-weight: bolder;
+    
+}
+.smalltexts{
+    box-sizing: border-box;
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 50%;
+    text-align: center;
+}
+.buttonmid{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.buttonmid1{
+    width: 180px;
+    height: 54px;
+    background-color: #FF900E;
+    color: white;
+    border: none;
 }
