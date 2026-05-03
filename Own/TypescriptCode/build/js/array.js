@@ -29,5 +29,30 @@ const exampleObj = {
 };
 exampleObj.prop1 = 'salman';
 exampleObj.prop2 = false;
+let evh = {
+    name: 'eddit',
+    active: false,
+    album: ['1984', 32],
+};
+let JP = {
+    name: 'jimmy',
+    active: true,
+    album: ['1984', 32, 'hello'],
+};
+// evh = JP we can definitely do this thing
+JP.name = 'hamilton'; // we can certainly do this 
+const greetguitarist = (Guitarist) => {
+    return `hello ${Guitarist.name}!`;
+};
+//------------Enums-----------------\\
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 1] = "U";
+    Grade[Grade["D"] = 2] = "D";
+    Grade[Grade["C"] = 3] = "C";
+    Grade[Grade["B"] = 4] = "B";
+    Grade[Grade["A"] = 5] = "A";
+})(Grade || (Grade = {}));
+console.log(Grade.U);
 export {};
 //# sourceMappingURL=array.js.map

@@ -42,3 +42,50 @@ const exampleObj = {
 exampleObj.prop1='salman';
 exampleObj.prop2=false;
 
+
+
+type guitarist = {
+    name:string,
+    active:boolean,
+    album:(string|number)[],
+}
+
+let evh: guitarist = {
+    name:'eddit',
+    active:false,
+    album:['1984',32],
+}
+
+let JP: guitarist = {
+    name:'jimmy',
+    active:true,
+    album:['1984',32,'hello'],
+}
+
+// evh = JP we can definitely do this thing
+JP.name='hamilton' // we can certainly do this 
+
+const greetguitarist = (Guitarist:guitarist) =>{
+    return `hello ${Guitarist.name}!`
+}
+
+//We will learn later about when we should use interface or Type alias 
+interface Artist {
+    name:string,
+    active?:boolean,
+    album:(string|number)[],
+}
+
+
+//------------Enums-----------------\\
+
+
+enum Grade {
+    U=1,
+    D,
+    C,
+    B,
+    A,
+}
+
+console.log(Grade.U)
