@@ -88,6 +88,28 @@ class WebDev extends coder_visibility_modifiers {
 // Now you must provide all required values when creating the instance
 const Sera = new WebDev('Sera', 101, 22, '4th', true, 'mac');
 
-Sera.getAge
+Sera.getAge()
+
+
+//---------------------Interfaces--------------------------\\
+
+interface Musician {
+    name:string
+    instrument:string
+    play(action:string):string
+}
+
+class Guitarist implements Musician{
+    name:string
+    instrument: string
+    
+    constructor(name:string,instrument:string){
+        this.name = name
+        this.instrument= instrument
+    }
+    play(action:string){
+        return `${this.name} ${action} `
+    }
+}
 
 

@@ -47,6 +47,15 @@ class WebDev extends coder_visibility_modifiers {
 }
 // Now you must provide all required values when creating the instance
 const Sera = new WebDev('Sera', 101, 22, '4th', true, 'mac');
-Sera.getAge;
+Sera.getAge();
+class Guitarist {
+    constructor(name, instrument) {
+        this.name = name;
+        this.instrument = instrument;
+    }
+    play(action) {
+        return `${this.name} ${action} `;
+    }
+}
 export {};
 //# sourceMappingURL=class.js.map
