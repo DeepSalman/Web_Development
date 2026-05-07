@@ -32,5 +32,21 @@ console.log(Salman.name);
 // console.log(Salman.age) This wont work because this is private property
 // console.log(Salman.status) this also dont work because this is a protected property
 Salman.getAge();
+///Extend a Class
+class WebDev extends coder_visibility_modifiers {
+    constructor(
+    // 1. Include parent properties in the child constructor
+    name, roll, age, semester, status, 
+    // 2. 'public' here automatically creates this.computer = computer
+    computer) {
+        // 3. Pass values directly, NOT using 'this'
+        super(name, roll, age, semester, status);
+        this.computer = computer;
+        // No need for this.computer = computer; TypeScript does it for you!
+    }
+}
+// Now you must provide all required values when creating the instance
+const Sera = new WebDev('Sera', 101, 22, '4th', true, 'mac');
+Sera.getAge;
 export {};
 //# sourceMappingURL=class.js.map
