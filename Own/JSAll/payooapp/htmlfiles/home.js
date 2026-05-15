@@ -15,7 +15,7 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
 
     document.getElementById("available_balance").innerText=new_balance
 
-
+    console.log("Local COntribution")
     
     
 
