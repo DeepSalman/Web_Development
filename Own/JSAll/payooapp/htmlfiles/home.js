@@ -35,8 +35,10 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
 
 
 
-// Toggling Feature
 
+
+
+// Toggling Feature
 document.getElementById("add_money_div").addEventListener("click",function(){
     document.getElementById("cash_out_parent").style.display = "none"
     document.getElementById("add_money_parent").style.display = "block"
