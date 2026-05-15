@@ -25,7 +25,7 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
         return
     }
     
-
+    
     document.getElementById("available_balance").innerText=new_balance
     
     
