@@ -31,11 +31,11 @@
 
             <!-- cards -->
             <div class="border-2 border-none h-[200px] max-w-lg mx-auto mt-1 min-h-[200px] grid grid-cols-3 gap-3 ">
-                <div class="border-2 border-gray-500 text-center flex flex-col justify-center rounded-3xl">
+                <div id="add_money_div" class="border-2 border-gray-500 text-center flex flex-col justify-center rounded-3xl">
                     <img src="../resources/assets/wallet1.png " alt="" class="mx-auto">
                     <h1>Add Money</h1>
                 </div>
-                <div class="border-2 border-gray-500 text-center flex flex-col justify-center rounded-3xl">
+                <div id="cash_out_div" class="border-2 border-gray-500 text-center flex flex-col justify-center rounded-3xl">
                     <img src="../resources/assets/purse1.png " alt="" class="mx-auto">
                     <h1>Cashout</h1>
                 </div>
@@ -62,7 +62,8 @@
 
 
             <!-- AddMoney -->
-             <div class="all-form-sections max-w-lg mx-auto">
+             <div id="add_money_parent" class="all-form-sections max-w-lg mx-auto">
+                <h1>Add Money</h1>
                 <form action="" class="bg-white rounded-2xl p-8">
                     <div>
                         <h1>Select A bank</h1>
@@ -90,6 +91,43 @@
                         <input id="pin_number" type="text" placeholder="Enter Your Mobile Number" class="rounded-3xl input bg-[#f4f5f7] mt-3 w-full" />
                     </div>
                     <button id="add-money-btn" type="submit" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white" id="login_button_homepage">Add Money</button>
+
+                </form>
+                
+             </div>
+
+
+
+             <!-- Cash out -->
+             <div id="cash_out_parent" class="all-form-sections max-w-lg mx-auto" style="display: none;">
+                <h1>Cash Out</h1>
+                <form action="" class="bg-white rounded-2xl p-8">
+                    <div>
+                        <h1>Select A Cash Out method</h1>
+                        <select id="bank_option" class="select select-ghost ">
+                        <option disabled selected>Pick a bank</option>
+                        <option>Jamuna</option>
+                        <option>Brac</option>
+                        <option>Raleway</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="">Bank Account Number</label>
+                        <br>
+                        <input id="bank_account" type="text" placeholder="Enter Your Mobile Number" class="rounded-3xl input bg-[#f4f5f7] mt-3 w-full" />
+                    </div>
+                    <div>
+                        <label class="">Amount to add</label>
+                        <br>
+                        <input id="amount_add" type="text" placeholder="Enter Your Mobile Number" class="rounded-3xl input bg-[#f4f5f7] mt-3 w-full" />
+
+                    </div>
+                    <div>
+                        <label class="">Pin Number</label>
+                        <br>
+                        <input id="pin_number" type="text" placeholder="Enter Your Mobile Number" class="rounded-3xl input bg-[#f4f5f7] mt-3 w-full" />
+                    </div>
+                    <button id="cash-out-btn" type="submit" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white" id="login_button_homepage">Cash out Money</button>
 
                 </form>
                 

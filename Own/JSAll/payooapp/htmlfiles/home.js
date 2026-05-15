@@ -25,10 +25,24 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
         return
     }
     
-    
+
     document.getElementById("available_balance").innerText=new_balance
     
     
 
 
+})
+
+
+
+// Toggling Feature
+
+document.getElementById("add_money_div").addEventListener("click",function(){
+    document.getElementById("cash_out_parent").style.display = "none"
+    document.getElementById("add_money_parent").style.display = "block"
+})
+
+document.getElementById("cash_out_div").addEventListener("click",function(){
+    document.getElementById("cash_out_parent").style.display = "block"
+    document.getElementById("add_money_parent").style.display = "none"
 })
