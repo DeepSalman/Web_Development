@@ -48,3 +48,8 @@ document.getElementById("cash_out_div").addEventListener("click",function(){
     document.getElementById("cash_out_parent").style.display = "block"
     document.getElementById("add_money_parent").style.display = "none"
 })
+
+
+
+//Cash out functionality
+
