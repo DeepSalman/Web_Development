@@ -7,15 +7,19 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
     const amount =parseInt(document.getElementById("amount_add").value)
     const pin = document.getElementById("pin_number").value 
 
-    console.log(bank,account_number,amount,pin)
+    
     
     const balance = parseInt(document.getElementById("available_balance").innerText)
 
     const new_balance = balance + amount
 
-    document.getElementById("available_balance").innerText=new_balance
+    if(account_number.length<11){
+        alert("Please Provide Valid Account Number")
+        return
+    }
+    
 
-    console.log("Local COntribution")
+    document.getElementById("available_balance").innerText=new_balance
     
     
 
