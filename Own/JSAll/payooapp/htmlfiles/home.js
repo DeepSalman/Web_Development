@@ -1,6 +1,5 @@
 const valid_pin = 2456
 
-
 document.getElementById("add-money-btn").addEventListener("click",function(e){
     e.preventDefault()
     console.log("Button Clicked")
@@ -35,10 +34,7 @@ document.getElementById("add-money-btn").addEventListener("click",function(e){
 
 
 
-
-
-
-// Toggling Feature
+// Toggling Feature------------------------------------------------------------------
 document.getElementById("add_money_div").addEventListener("click",function(){
     document.getElementById("cash_out_parent").style.display = "none"
     document.getElementById("add_money_parent").style.display = "block"
@@ -49,9 +45,7 @@ document.getElementById("cash_out_div").addEventListener("click",function(){
     document.getElementById("add_money_parent").style.display = "none"
 })
 
-
-
-//Cash out functionality
+//Cash out functiona------------------------------------------------------------------
 
 document.getElementById("cash-out-btn").addEventListener("click",function(e){
     e.preventDefault()
@@ -61,3 +55,5 @@ document.getElementById("cash-out-btn").addEventListener("click",function(e){
     document.getElementById("available_balance").innerText=new_balance
 
 })
+
+
