@@ -53,3 +53,11 @@ document.getElementById("cash_out_div").addEventListener("click",function(){
 
 //Cash out functionality
 
+document.getElementById("cash-out-btn").addEventListener("click",function(e){
+    e.preventDefault()
+    const balance = parseInt(document.getElementById("available_balance").innerText)
+    const amount =parseInt(document.getElementById("amount_del").value)
+    const new_balance = balance-amount
+    document.getElementById("available_balance").innerText=new_balance
+
+})
