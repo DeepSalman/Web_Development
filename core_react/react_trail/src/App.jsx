@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import Counter from './Counter'
 
 function App() {
   function handleClick(){
@@ -21,6 +22,7 @@ function App() {
       <button onClick={()=>handleClick()}>Click Me</button>
       <button onClick={()=>handleClick()}>Click Me2</button>
 
+      <Counter></Counter>
       
     </>
   )
