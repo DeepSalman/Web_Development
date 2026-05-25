@@ -6,12 +6,17 @@ export default function Counter(){
         const newCount = count +1
         SetCount(newCount)
     }
+    const reset = ()=>{
+        
+        SetCount(0);
+    }
 
 
     return (
         <div>
             <h3>Count:{count}</h3>
             <button onClick={handleAdd}>Add</button>
+            <button onClick={reset}>Reset</button>
         </div>
     )
 }
