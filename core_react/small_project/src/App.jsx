@@ -7,11 +7,15 @@ const countriesPromise = fetch('https://openapi.programming-hero.com/api/all')
   .then(res => res.json())
 
 
+// const countriesPromise = fetch('https://openapi.programming-hero.com/api/all')
+//     .then(res=>res.json())
+
 function App() {
   return (
     <>
-      <Suspense fallback={<p>Nadir vai loading....</p>}>
+      <Suspense fallback={<p>Loading countries.....</p>}>
         <Countries countriesPromise={countriesPromise}></Countries>
+      
       </Suspense>
     </>
   )
