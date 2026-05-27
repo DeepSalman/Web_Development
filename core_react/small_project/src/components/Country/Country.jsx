@@ -1,10 +1,12 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import './Country.css';
 
 export default function Country({ country }) {
-    
-    const handleVisited =()=>{
-        console.log('button clicked')
+
+    const [visited, setVisited] = useState(false);
+
+    const handleVisited = () => {
+        setVisited(visited? false:true)
     }
 
     return (
@@ -13,9 +15,11 @@ export default function Country({ country }) {
             <p>Name: {country.name.common}</p>
             <p>Population :{country.population.population}</p>
             <p>Area:{country.area.area}{
-                country.area.area>300000?" (Big country)" : " (Small Country)"
+                country.area.area > 300000 ? " (Big country)" : " (Small Country)"
             }</p>
-            <button onClick={handleVisited}>Not Visited</button>
+            <button onClick={handleVisited}>{
+                visited? "Visited":"Not Visited"
+            }</button>
         </div>
     )
 }
