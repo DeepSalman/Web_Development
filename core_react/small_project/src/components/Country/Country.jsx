@@ -10,7 +10,8 @@ export default function Country({ country }) {
     }
 
     return (
-        <div className='country'>
+        //Conditional CSS applied here 
+        <div className={`country ${visited&& 'country-visited'}`}>
             <img src={country.flags.flags.png} alt={country.flags.flags.alt}></img>
             <p>Name: {country.name.common}</p>
             <p>Population :{country.population.population}</p>
