@@ -4,7 +4,7 @@ import './Country.css';
 export default function Country({country}){
     console.log(country.population)
     return (
-        <div>
+        <div className='country'>
             <img src={country.flags.flags.png} alt={country.flags.flags.alt}></img>
             <p>Name: {country.name.common}</p>
             <p>Population :{country.population.population}</p>
