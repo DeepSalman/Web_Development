@@ -27,7 +27,7 @@ export default function Countries({ countriesPromise }) {
             <h3>Total Country Visited :{visitedCountries.length}</h3>
             <ol>
                 {
-                    visitedCountries.map(country => <li key={country.cca3.cca3}></li>)
+                    visitedCountries.map(country => <li key={country.cca3.cca3}>country.name.common</li>)
                 }
             </ol>
 
