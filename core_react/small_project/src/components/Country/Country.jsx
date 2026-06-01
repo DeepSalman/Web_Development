@@ -12,6 +12,8 @@ export default function Country({ country,handleVisitedCountries,handleVisitedFl
         handleVisitedCountries(country)
     }
 
+    
+
     return (
         //Conditional CSS applied here 
         <div className={`country ${visited&& 'country-visited'}`}>
@@ -36,5 +38,7 @@ export default function Country({ country,handleVisitedCountries,handleVisitedFl
 /**
  * 1. inline css (style object)
  * 2. 
- * 
+ * comment pushed
 */
+
+
